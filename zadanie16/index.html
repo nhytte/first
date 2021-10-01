@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>16</title>    
+    </head>
+    <body>
+        
+        
+        <input type="button" value="Cztery sposoby wyprowadzania danych w JS oraz innerHTML" onclick="przycisk();"> <br><br>
+        <input type="button" value="document.write();" onclick="docwrite();"> <br> <br>
+        <input type="text" id="a" value=""> <br><br>
+
+        <table border=1>
+            <tr>
+                <td name=1>imie</td>
+                <td name=2>wiek</td>
+            </tr>
+            <tr>
+                <td name=3>Kacper</td>
+                <td id="cztery"></td>
+            </tr>
+        </table>
+        
+        
+        
+        
+    </body>
+
+    <script type="text/javascript">
+        function przycisk(){
+            document.getElementById("a").setAttribute('value','My default value');
+            alert("alert");
+            document.getElementById("cztery").innerHTML = "19";
+            
+        }
+        function docwrite(){
+            document.write("Drugi sposob");
+        }
+
+    </script>
+</html>

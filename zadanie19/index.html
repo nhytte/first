@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function pole(a,b){
+                wynik1.innerHTML = a*b + " cm<sup>2</sup> pola";
+            }
+
+            function obw(a,b){
+                wynik2.innerHTML = a*2+b*2 + " cm  obwodu";
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <input type="number" id="liczbaA">
+        <input type="number" id="liczbaB">
+        <input type="button" value="oblicz" onclick='pole(liczbaA.value,liczbaB.value); obw(liczbaA.value,liczbaB.value);'>
+    <p id="wynik1"></p>
+    <p id="wynik2"></p>
+        
+    </body>
+</html>
