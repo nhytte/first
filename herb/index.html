@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="pudlo">
+    <div id="logo"><a href="https://www.bourgogne-wines.com/"><img width="150px" height="150px" src="eo.png" alt=""></a></div>
+    <div id="lewo">
+        <p id="wynik"></p>
+        <p id="wynik1"></p>
+        
+    </div>
+    <div id="prawo">
+        Muszkieterzy:
+        <input type="number" id="muszkiet"> <br><br>
+        Artylerzysci
+        <input type="number" id="artyleria"> <br><br>
+        Kawaleria
+        <input type="number" id="kawaleria"><br><br>
+
+        <input type="submit" value="Zatwierdz" onclick="armia();">
+
+    </div>
+    <div id="dol">
+        <p id="wynik2"></p>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    function armia(){
+        var m = parseInt(muszkiet.value);
+        var a = parseInt(artyleria.value);
+        var k = parseInt(kawaleria.value);
+
+        wynik.innerHTML = "Armia składa się z: <br> " + m + " muszkieterów <br>" +  a + " artyleri <br>" + k + " kawalerii";
+
+        var pot = Math.floor((Math.random()*20)+1);
+
+        var mm = Math.pow(m,pot);
+        var aa = Math.pow(a,pot);
+        var kk = Math.pow(k,pot);
+
+        wynik1.innerHTML = "Armia wroga składa się z: <br> " + mm + " muszkieterów <br>" +  aa + " artyleri <br>" + kk + " kawalerii";
+
+        var img = "<img width=\"150px\" height=\"150px\" src=\"rycerz.gif\">";
+        if(mm+aa+kk>4000000){
+
+            wynik2.innerHTML= img;
+        }
+        
+    }
+</script>
+<style>
+
+    html, body, #pudlo { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%;
+    }
+    #logo{
+        width: 100%;
+        height: 20%;
+        background-color: blue;
+    }
+    #lewo{
+        width: 50%;
+        height: 60%;
+        float: left;
+        background-color: red;
+
+    }
+    #prawo{
+        width: 50%;
+        height: 60%;
+        float: left;
+        background-color:chartreuse;
+
+    }
+    #dol{
+        width: 100%;
+        height: 20%;
+        clear:both;
+        background-color:darkred;
+
+    }
+</style>

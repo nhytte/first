@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="container">
+        <div id="logo">
+            <img id="zdjecie" width="170px" height="220px" src="profile.jpg">
+        </div>
+        <div id="info">
+            <p>Kacper Domański</p>
+            
+            <p>e-mail: <a href="https://www.youtube.com/watch?v=iik25wqIuFo">kacdom@gmail.com</a></p>
+
+            <p>tel. 511 111 434</p>
+
+        </div>
+        
+        <div id="skillsy">
+            <h3>SKILLSY</h3>
+            - Mam Diament 3 w Valorant(EZ) <br>
+            - I speak troche angielski <br>
+            - nie umiem biegać(złamałem noge) <br>
+            - lubie spać <br><br>
+        </div>
+
+        <div id="bio">
+            <h4>AUTOBIOGRAFIA</h4>
+            Nazywam się Kacper, przyszedłem na ten ponury świat 9 sierpnia 2002 roku. <br> 
+            Od tamtej chwili cieszę się każdym momentem mojego życia.  <br> 
+            Bardzo lubię programowac, ale jestem leniwy i nie wiem co chce robic w zyciu.  <br> 
+            Chciałbym być programista, ale wiem że to będzie ciężkie, <br> 
+            więc i tak dupa <img height="35px" src="sadge.png"> <img height="35px" src="rapthis.gif">
+        </div>
+    
+        <p id="dziela"> <a href="dziela.html">Dziela sztuki - Kliknij mnie :)</a></p>
+
+        <div id="kalk">
+            <p id="aha">Przychody: <input type="number" id="przychody"/></p>
+
+    <p id="aha">Podatek<select id="nazwy">
+        <option value="liniowy">Liniowy</option>
+        <option value="progresywny">progresywny</option>
+    </select></p>
+    <input type="submit" value="oblicz" onclick = "podatki()" /> 
+
+    <p id="aha">ryczałty<select id="ryczalciki">
+        <option value="a">Wolne zawody</option>
+        <option value="b">programista </option>
+        <option value="c">przy najmie prywatnym</option>
+        <option value="d">roboty budowlane</option>
+        <option value="e">gastronomia</option>
+        <option value="f">sprzedaz ŚT i wyposażenia</option>
+    </select></p>
+
+    <input type="submit" value="oblicz" onclick = "podatki2()" /> 
+
+    <div id="wynik"></div>
+    <div id="wynik2"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function podatki()
+    {
+        var piniodz = parseFloat(przychody.value);
+        var podatk = nazwy.value;
+        var podatk2 = ryczalciki.value;
+    
+        switch(podatk)
+        {
+
+            case 'liniowy':
+                piniodz2 = piniodz * 0.19;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+            break;
+
+            case 'progresywny':
+                if(piniodz<85528)
+                {
+                 piniodz2 = piniodz * 0.17;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl"; 
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl"; 
+                }
+                else{
+                    piniodz2 = piniodz * 0.32;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl"; 
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";  
+                }
+            break;
+
+
+    
+        }
+        
+        }
+
+
+
+
+
+        function podatki2()
+    {
+        var piniodz = parseFloat(przychody.value);
+        var piniodz2 = 0;
+        var podatk2 = ryczalciki.value;
+    
+        switch(podatk2)
+        {
+            case 'a':
+                piniodz2 = piniodz * 0.17;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+            break;
+
+            case 'b':
+                piniodz2 = piniodz * 0.15;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+            break;
+
+            case 'c':
+            if(piniodz<100000)
+                {
+                 piniodz2 = piniodz * 0.085;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl"; 
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl"; 
+                }
+                else{
+                    piniodz2 = piniodz * 0.125;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+            
+               
+                }
+            break;
+        
+
+            case 'd':
+                piniodz2 = piniodz * 0.055;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl"; 
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl"; 
+                
+            break;
+
+            case 'e':
+                piniodz2 = piniodz * 0.02;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+
+            case 'f':
+                piniodz2 = piniodz * 0.10;
+                wynik.innerHTML = "Podatek wynosi: " +  piniodz2.toFixed(2) + "zl";
+                var piniodz3 = piniodz - piniodz2;
+                wynik2.innerHTML = "Stan konta: " +  piniodz3.toFixed(2) + "zl";
+
+            }
+            
+    }
+    
+    
+    </script>
